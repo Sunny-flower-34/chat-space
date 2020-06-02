@@ -1,0 +1,24 @@
+.chat-room
+  .chat-room__group-info
+    .groups
+      .groups__name test
+      .groups__member Member : masa
+    .edit
+    = link_to "#", class: "edit__btn" do
+      Edit
+  .chat-room__message-list
+    .chat-room__message-list__message-index
+      .chat-room__message-list__message-index__set
+        .chat-room__message-list__message-index__set__name masa 
+        .chat-room__message-list__message-index__set__time 2020年6月1日(Mon) 15時00分
+      .chat-room__message-list__message-index__mess おはよう！
+  .chat-room__message-form
+    %form.chat-room__message-form__contents
+    .form__inputBox
+      %input.form__inputBox__message{"placeholder": "type a message", "type": "text"}
+      %label{class: "form__inputBox__image"}
+        = icon('far', 'image', class: "icon")
+        %input.form__inputBox__message__file{type: "file" }
+    %input.form__submitbtn{"type": "submit","value": "Send"}
+
+
