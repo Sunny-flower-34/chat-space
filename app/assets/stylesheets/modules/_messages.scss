@@ -43,17 +43,24 @@
   height: calc(100vh - 100px);
   padding: 0 20px;
   color: #fff;
-  &__name{
-    font-size: 15px;
-    padding-top: 20px;
-    padding-bottom: 5px;
-  }
-  &__message{
-    font-size: 11px;
-    padding-bottom: 40px;
+  &__G{
+    &__name{
+      color: #fff;
+      font-size: 15px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+    }
+    &__message{
+      color: #fff;
+      font-size: 11px;
+      padding-bottom: 40px;
+    }
+
   }
 }
-
+a {
+  text-decoration: none;
+}
 $section-color: #38aef0;
 // メイン
 .chat-room{
