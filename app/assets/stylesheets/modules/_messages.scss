@@ -89,7 +89,7 @@ $section-color: #38aef0;
       &__btn{
         color: $section-color;
         font-size: 16px;
-        padding: 0 20px;
+        padding: 10px 20px;
         line-height: 40px;
         margin: 28px 40px;
         border: 1px solid;
@@ -129,26 +129,30 @@ $section-color: #38aef0;
     display: flex;
     justify-content: center;
     align-items: center;
-    .form__inputBox{
-      padding-left: 40px;
+    &__contents{
       display: flex;
       width: 100%;
-      position: relative;
-      &__message{
-        @include nav_common(100%,50px);
-        padding: 10px;
-        border: none;
-        &__file{
-          display: none;
+      .form__inputBox{
+        padding-left: 40px;
+        display: flex;
+        width: 100%;
+        position: relative;
+        &__message{
+          @include nav_common(100%,50px);
+          padding: 10px;
+          border: none;
+          &__file{
+            display: none;
+          }
         }
-      }
-      &__image{
-        position: absolute;
-        right: 10px;
-        height: 50px;
-        padding: 10px;
-        .icon{
-          font-size: 25px;
+        &__image{
+          position: absolute;
+          right: 10px;
+          height: 50px;
+          padding: 10px;
+          .icon{
+            font-size: 25px;
+          }
         }
       }
     }
@@ -159,6 +163,7 @@ $section-color: #38aef0;
         background-color: $section-color;
         padding:0 30px;
         margin-left: 15px;
+        margin-right: 20px;
     }
   }
 }

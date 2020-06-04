@@ -1,0 +1,14 @@
+.chat-room__message-list__message-index
+  .chat-room__message-list__message-index__set
+    .chat-room__message-list__message-index__set__name 
+      = message.user.name
+    .chat-room__message-list__message-index__set__time 
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .chat-room__message-list__message-index__mess 
+    - if message.content.present?
+      %p.Message__content
+        = message.content
+      = image_tag message.image.url, class: 'Message__image' if message.image.present?
+
+
+      

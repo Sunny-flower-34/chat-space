@@ -1,24 +1,30 @@
 .chat-room
   .chat-room__group-info
     .groups
-      .groups__name test
-      .groups__member Member : masa
+      .groups__name 
+        = @group.name
+      .groups__member 
+        Member : 
+        - @group.users.each do |user|
+          = user.name
     .edit
-    = link_to "#", class: "edit__btn" do
-      Edit
+      = link_to edit_group_path(@group) , class: "edit__btn" do
+        Edit
   .chat-room__message-list
-    .chat-room__message-list__message-index
-      .chat-room__message-list__message-index__set
-        .chat-room__message-list__message-index__set__name masa 
-        .chat-room__message-list__message-index__set__time 2020年6月1日(Mon) 15時00分
-      .chat-room__message-list__message-index__mess おはよう！
+    = render @messages
   .chat-room__message-form
-    %form.chat-room__message-form__contents
-    .form__inputBox
-      %input.form__inputBox__message{"placeholder": "type a message", "type": "text"}
-      %label{class: "form__inputBox__image"}
-        = icon('far', 'image', class: "icon")
-        %input.form__inputBox__message__file{type: "file" }
-    %input.form__submitbtn{"type": "submit","value": "Send"}
+    = form_with model: [@group, @message], html: {class: "chat-room__message-form__contents"}, local: true do |f|
+      .form__inputBox 
+        = f.text_field :content, class: 'form__inputBox__message', placeholder: 'type a message'
+        = f.label :image, class: 'form__inputBox__image' do
+          = icon('far', 'image', class: 'icon')
+          = f.file_field :image, class: 'form__inputBox__message__file'
+      = f.submit 'Send', class: 'form__submitbtn'
+
+    -#   %input.form__inputBox__message{"placeholder": "type a message", "type": "text"}
+    -#   %label{class: ""}
+    -#     = icon('far', 'image', class: "icon")
+    -#     %input.{type: "file" }
+    -# %input.{"type": "submit","value": "Send"}
 
 

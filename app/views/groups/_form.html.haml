@@ -5,6 +5,7 @@
       %ul
         - group.errors.full_messages.each do |message|
           %li= message
+          
   .SettingGroupForm__field
     .SettingGroupForm__leftField
       = f.label :name, "グループ名", class: 'SettingGroupForm__label'
@@ -20,4 +21,5 @@
   .SettingGroupForm__field
     .SettingGroupForm__leftField
     .SettingGroupForm__rightField
+      
       = f.submit class: 'SettingGroupForm__button'
