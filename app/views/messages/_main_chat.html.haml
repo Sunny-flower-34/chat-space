@@ -12,6 +12,8 @@
         Edit
   .chat-room__message-list
     = render @messages
+
+    
   .chat-room__message-form
     = form_with model: [@group, @message], html: {class: "chat-room__message-form__contents"}, local: true do |f|
       .form__inputBox 
