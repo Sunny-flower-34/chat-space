@@ -13,7 +13,9 @@ class UsersController < ApplicationController
 
 
   def update
+    # ログインしてるユーザーだったら更新してホームに戻る
     if current_user.update(user_params)
+      # 画面遷移
       redirect_to root_path
     else
       render :edit
@@ -21,8 +23,9 @@ class UsersController < ApplicationController
   end
   
   private
-
+ 
   def user_params
+    # params.require(モデル名).permit(更新したいカラム名)
     params.require(:user).permit(:name, :email)
   end
   
